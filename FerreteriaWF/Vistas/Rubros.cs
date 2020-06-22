@@ -12,9 +12,21 @@ namespace FerreteriaWF.Vistas
 {
     public partial class Rubros : Form
     {
+
         public Rubros()
         {
             InitializeComponent();
+        }
+        public Rubros(DataTable dt)
+        {
+            InitializeComponent();
+            tablaRubros.DataSource = dt;
+            //tablaRubros.
+        }
+
+        private void Rubros_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

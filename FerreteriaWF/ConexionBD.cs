@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,8 @@ namespace FerreteriaWF
     class ConexionBD
     {
         /**TODO: Para que funcione deben cambiar 
-         * Username (si usan otro que sea 'postgres'), 
-         * Password (con la que hayan asignado ustedes a su cuenta)
+         * 1. Username (si usan otro que sea 'postgres'), 
+         * 2. Password (con la que hayan asignado ustedes a su cuenta)
          * y DataBase (si no se llama igual)
         */
         private string stringConnection = "Username= postgres; Password = Burro.2909; Host= localhost;Port =5432 ; Database = Ferreteria";
@@ -52,7 +53,27 @@ namespace FerreteriaWF
                     Console.WriteLine("Error de desconexion: " + e.Message);
                 }
             }
-        }       
+        }    
+        
+        public DataTable Rubros()
+        {
+            //Retorna todos los rubros
+            DataTable rubros = new DataTable();
+            string consulta = "SELECT * FROM Rubro;";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            try
+            {   
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                adapter.Fill(rubros);
+                return rubros;
+            }
+            catch(Exception e)
+            {
+                //En caso de error devuelve una tabla vacia
+                Console.WriteLine("Error de consulta: "+e.Message );
+                return new DataTable();
+            }            
+        }
 
     }
 }

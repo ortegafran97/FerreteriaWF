@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
+            this.tablaRubros = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -41,15 +43,28 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "RUBROS";
             // 
+            // tablaRubros
+            // 
+            this.tablaRubros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tablaRubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaRubros.Location = new System.Drawing.Point(17, 38);
+            this.tablaRubros.Name = "tablaRubros";
+            this.tablaRubros.Size = new System.Drawing.Size(279, 178);
+            this.tablaRubros.TabIndex = 2;
+            // 
             // Rubros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tablaRubros);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Rubros";
             this.Text = "Rubros";
+            this.Load += new System.EventHandler(this.Rubros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView tablaRubros;
     }
 }

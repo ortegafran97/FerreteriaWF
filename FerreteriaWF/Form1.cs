@@ -12,11 +12,12 @@ namespace FerreteriaWF
 {
     public partial class FormFerreteria : Form
     {
+        ConexionBD con;
+
         public FormFerreteria()
         {
             InitializeComponent();
-            ConexionBD con = new ConexionBD();
-            con.Cerrar();
+            con = new ConexionBD();            
         }
 
         private void FormFerreteria_Load(object sender, EventArgs e)
@@ -63,7 +64,14 @@ namespace FerreteriaWF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Vistas.Rubros());
+            DataTable rubros = con.Rubros();
+            AbrirFormHijo(new Vistas.Rubros(rubros));
+
+        }
+
+        private void FormFerreteria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con.Cerrar();
         }
     }
 }

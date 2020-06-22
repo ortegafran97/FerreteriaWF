@@ -136,6 +136,7 @@
             this.Name = "FormFerreteria";
             this.Text = "Ferreteria";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormFerreteria_FormClosed);
             this.Load += new System.EventHandler(this.FormFerreteria_Load);
             this.panel1.ResumeLayout(false);
             this.panelBotones.ResumeLayout(false);

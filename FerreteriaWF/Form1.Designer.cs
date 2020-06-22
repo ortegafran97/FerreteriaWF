@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelBotones = new System.Windows.Forms.Panel();
             this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.btInicio = new System.Windows.Forms.Button();
-            this.btCompras = new System.Windows.Forms.Button();
-            this.btStock = new System.Windows.Forms.Button();
+            this.panelBotones = new System.Windows.Forms.Panel();
             this.btProveedores = new System.Windows.Forms.Button();
+            this.btStock = new System.Windows.Forms.Button();
+            this.btCompras = new System.Windows.Forms.Button();
+            this.btInicio = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -49,20 +50,6 @@
             this.panel1.Size = new System.Drawing.Size(937, 477);
             this.panel1.TabIndex = 0;
             // 
-            // panelBotones
-            // 
-            this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelBotones.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelBotones.Controls.Add(this.btProveedores);
-            this.panelBotones.Controls.Add(this.btStock);
-            this.panelBotones.Controls.Add(this.btCompras);
-            this.panelBotones.Controls.Add(this.btInicio);
-            this.panelBotones.Location = new System.Drawing.Point(4, 4);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(134, 470);
-            this.panelBotones.TabIndex = 0;
-            // 
             // PanelContenedor
             // 
             this.PanelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -75,25 +62,30 @@
             this.PanelContenedor.TabIndex = 1;
             this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
-            // btInicio
+            // panelBotones
             // 
-            this.btInicio.Location = new System.Drawing.Point(9, 9);
-            this.btInicio.Name = "btInicio";
-            this.btInicio.Size = new System.Drawing.Size(122, 23);
-            this.btInicio.TabIndex = 0;
-            this.btInicio.Text = "btInicio";
-            this.btInicio.UseVisualStyleBackColor = true;
-            this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
+            this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelBotones.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelBotones.Controls.Add(this.button1);
+            this.panelBotones.Controls.Add(this.btProveedores);
+            this.panelBotones.Controls.Add(this.btStock);
+            this.panelBotones.Controls.Add(this.btCompras);
+            this.panelBotones.Controls.Add(this.btInicio);
+            this.panelBotones.Location = new System.Drawing.Point(4, 4);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(134, 470);
+            this.panelBotones.TabIndex = 0;
             // 
-            // btCompras
+            // btProveedores
             // 
-            this.btCompras.Location = new System.Drawing.Point(9, 38);
-            this.btCompras.Name = "btCompras";
-            this.btCompras.Size = new System.Drawing.Size(122, 23);
-            this.btCompras.TabIndex = 1;
-            this.btCompras.Text = "btCompras";
-            this.btCompras.UseVisualStyleBackColor = true;
-            this.btCompras.Click += new System.EventHandler(this.btCompras_Click);
+            this.btProveedores.Location = new System.Drawing.Point(9, 96);
+            this.btProveedores.Name = "btProveedores";
+            this.btProveedores.Size = new System.Drawing.Size(122, 23);
+            this.btProveedores.TabIndex = 3;
+            this.btProveedores.Text = "btProveedores";
+            this.btProveedores.UseVisualStyleBackColor = true;
+            this.btProveedores.Click += new System.EventHandler(this.btProveedores_Click);
             // 
             // btStock
             // 
@@ -105,15 +97,35 @@
             this.btStock.UseVisualStyleBackColor = true;
             this.btStock.Click += new System.EventHandler(this.btStock_Click);
             // 
-            // btProveedores
+            // btCompras
             // 
-            this.btProveedores.Location = new System.Drawing.Point(9, 96);
-            this.btProveedores.Name = "btProveedores";
-            this.btProveedores.Size = new System.Drawing.Size(122, 23);
-            this.btProveedores.TabIndex = 3;
-            this.btProveedores.Text = "btProveedores";
-            this.btProveedores.UseVisualStyleBackColor = true;
-            this.btProveedores.Click += new System.EventHandler(this.btProveedores_Click);
+            this.btCompras.Location = new System.Drawing.Point(9, 38);
+            this.btCompras.Name = "btCompras";
+            this.btCompras.Size = new System.Drawing.Size(122, 23);
+            this.btCompras.TabIndex = 1;
+            this.btCompras.Text = "btCompras";
+            this.btCompras.UseVisualStyleBackColor = true;
+            this.btCompras.Click += new System.EventHandler(this.btCompras_Click);
+            // 
+            // btInicio
+            // 
+            this.btInicio.Location = new System.Drawing.Point(9, 9);
+            this.btInicio.Name = "btInicio";
+            this.btInicio.Size = new System.Drawing.Size(122, 23);
+            this.btInicio.TabIndex = 0;
+            this.btInicio.Text = "btInicio";
+            this.btInicio.UseVisualStyleBackColor = true;
+            this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "btRubros";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormFerreteria
             // 
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Button btStock;
         private System.Windows.Forms.Button btCompras;
         private System.Windows.Forms.Button btInicio;
+        private System.Windows.Forms.Button button1;
     }
 }
 

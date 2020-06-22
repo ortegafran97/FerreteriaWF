@@ -60,5 +60,10 @@ namespace FerreteriaWF
         {
             AbrirFormHijo(new Vistas.Proveedores());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Vistas.Rubros());
+        }
     }
 }

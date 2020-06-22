@@ -162,6 +162,12 @@
     <Compile Include="Vistas\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Rubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Rubros.Designer.cs">
+      <DependentUpon>Rubros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Rubros.resx">
+      <DependentUpon>Rubros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>

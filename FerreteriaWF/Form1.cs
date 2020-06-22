@@ -54,19 +54,22 @@ namespace FerreteriaWF
 
         private void btStock_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Vistas.Stock());
+            //AbrirFormHijo(new Vistas.Stock());
+            DataTable dt = con.Productos();
+            AbrirFormHijo(new Vistas.Stock(dt));
         }
 
         private void btProveedores_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Vistas.Proveedores());
+            //AbrirFormHijo(new Vistas.Proveedores());
+            DataTable dt = con.Proveedores();
+            AbrirFormHijo(new Vistas.Proveedores(dt));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btRubros_click(object sender, EventArgs e)
         {
             DataTable rubros = con.Rubros();
             AbrirFormHijo(new Vistas.Rubros(rubros));
-
         }
 
         private void FormFerreteria_FormClosed(object sender, FormClosedEventArgs e)

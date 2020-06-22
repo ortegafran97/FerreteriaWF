@@ -16,5 +16,16 @@ namespace FerreteriaWF.Vistas
         {
             InitializeComponent();
         }
+        public Stock(DataTable dt)
+        {
+            InitializeComponent();
+            tablaProductos.DataSource = dt;
+        }
+
+
+        private void Stock_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

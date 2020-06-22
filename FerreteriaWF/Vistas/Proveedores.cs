@@ -16,5 +16,15 @@ namespace FerreteriaWF.Vistas
         {
             InitializeComponent();
         }
+         public Proveedores(DataTable dt)
+        {
+            InitializeComponent();
+            tablaProveedores.DataSource = dt;
+        }
+
+        private void Proveedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

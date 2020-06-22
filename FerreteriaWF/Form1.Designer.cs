@@ -35,7 +35,7 @@
             this.btStock = new System.Windows.Forms.Button();
             this.btCompras = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btRubros = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelBotones.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelBotones.Controls.Add(this.button1);
+            this.panelBotones.Controls.Add(this.btRubros);
             this.panelBotones.Controls.Add(this.btProveedores);
             this.panelBotones.Controls.Add(this.btStock);
             this.panelBotones.Controls.Add(this.btCompras);
@@ -117,15 +117,15 @@
             this.btInicio.UseVisualStyleBackColor = true;
             this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
             // 
-            // button1
+            // btRubros
             // 
-            this.button1.Location = new System.Drawing.Point(9, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "btRubros";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btRubros.Location = new System.Drawing.Point(9, 125);
+            this.btRubros.Name = "btRubros";
+            this.btRubros.Size = new System.Drawing.Size(122, 23);
+            this.btRubros.TabIndex = 4;
+            this.btRubros.Text = "btRubros";
+            this.btRubros.UseVisualStyleBackColor = true;
+            this.btRubros.Click += new System.EventHandler(this.btRubros_click);
             // 
             // FormFerreteria
             // 
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Button btStock;
         private System.Windows.Forms.Button btCompras;
         private System.Windows.Forms.Button btInicio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btRubros;
     }
 }
 

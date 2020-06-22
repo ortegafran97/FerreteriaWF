@@ -33,12 +33,12 @@ namespace FerreteriaWF
             }
         }
 
-        public bool Estado()
+        public bool Estado() //Retorna true si la db esta conectada
         {
-            //Retorna true si la db esta conectada
+            
             return (conection.State == System.Data.ConnectionState.Open);
-        }
-        public void Cerrar()
+        } 
+        public void Cerrar() // Cierra la conexion con la BD
         {
             if(conection.State == System.Data.ConnectionState.Open)
             {
@@ -53,7 +53,7 @@ namespace FerreteriaWF
                     Console.WriteLine("Error de desconexion: " + e.Message);
                 }
             }
-        }    
+        }     
         
         public DataTable Rubros()
         {
@@ -73,6 +73,44 @@ namespace FerreteriaWF
                 Console.WriteLine("Error de consulta: "+e.Message );
                 return new DataTable();
             }            
+        }
+
+        public DataTable Proveedores()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "SELECT * FROM Proveedor;";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            try
+            {
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                //En caso de error devuelve una tabla vacia
+                Console.WriteLine("Error de consulta: " + e.Message);
+                return new DataTable();
+            }
+        }
+
+        public DataTable Productos()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "SELECT * FROM Producto;";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            try
+            {
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                //En caso de error devuelve una tabla vacia
+                Console.WriteLine("Error de consulta: " + e.Message);
+                return new DataTable();
+            }
         }
 
     }

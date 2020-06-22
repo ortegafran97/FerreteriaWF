@@ -10,11 +10,55 @@ using System.Windows.Forms;
 
 namespace FerreteriaWF
 {
-    public partial class Form1 : Form
+    public partial class FormFerreteria : Form
     {
-        public Form1()
+        public FormFerreteria()
         {
             InitializeComponent();
+            ConexionBD con = new ConexionBD();
+            con.Cerrar();
+        }
+
+        private void FormFerreteria_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AbrirFormHijo(Form hijo)
+        {
+            //Cambia el contenido de {PanelContenedor} por {hijo}
+            if (this.PanelContenedor.Controls.Count > 0) this.PanelContenedor.Controls.RemoveAt(0);
+            Form fh = hijo;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelContenedor.Controls.Add(fh);
+            this.PanelContenedor.Tag = fh;
+            fh.Show();
+        }
+
+        private void PanelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btInicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Vistas.Inicio());
+        }
+
+        private void btCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Vistas.Compras());
+        }
+
+        private void btStock_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Vistas.Stock());
+        }
+
+        private void btProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Vistas.Proveedores());
         }
     }
 }

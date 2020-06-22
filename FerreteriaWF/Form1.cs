@@ -12,12 +12,12 @@ namespace FerreteriaWF
 {
     public partial class FormFerreteria : Form
     {
-        ConexionBD con;
+        ConexionBD conexion;
 
         public FormFerreteria()
         {
             InitializeComponent();
-            con = new ConexionBD();            
+            conexion = new ConexionBD();            
         }
 
         private void FormFerreteria_Load(object sender, EventArgs e)
@@ -55,26 +55,26 @@ namespace FerreteriaWF
         private void btStock_Click(object sender, EventArgs e)
         {
             //AbrirFormHijo(new Vistas.Stock());
-            DataTable dt = con.Productos();
+            DataTable dt = conexion.Productos();
             AbrirFormHijo(new Vistas.Stock(dt));
         }
 
         private void btProveedores_Click(object sender, EventArgs e)
         {
             //AbrirFormHijo(new Vistas.Proveedores());
-            DataTable dt = con.Proveedores();
+            DataTable dt = conexion.Proveedores();
             AbrirFormHijo(new Vistas.Proveedores(dt));
         }
 
         private void btRubros_click(object sender, EventArgs e)
         {
-            DataTable rubros = con.Rubros();
+            DataTable rubros = conexion.Rubros();
             AbrirFormHijo(new Vistas.Rubros(rubros));
         }
 
         private void FormFerreteria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            con.Cerrar();
+            conexion.Cerrar();
         }
     }
 }

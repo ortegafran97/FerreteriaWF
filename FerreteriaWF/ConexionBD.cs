@@ -25,7 +25,7 @@ namespace FerreteriaWF
             {
                 conection = new NpgsqlConnection(stringConnection);
                 conection.Open();
-                Console.WriteLine("Conectado a BD: "+ conection.Database + " como usuario "+ conection.UserName);
+                Console.WriteLine("Conectado a BD: "+ conection.Database + "\nUsuario: "+ conection.UserName);
             }
             catch(Exception e)
             {

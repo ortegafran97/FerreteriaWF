@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btNuevaCompra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -42,12 +43,23 @@
             this.label1.Text = "Compras";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btNuevaCompra
+            // 
+            this.btNuevaCompra.Location = new System.Drawing.Point(13, 10);
+            this.btNuevaCompra.Name = "btNuevaCompra";
+            this.btNuevaCompra.Size = new System.Drawing.Size(108, 35);
+            this.btNuevaCompra.TabIndex = 2;
+            this.btNuevaCompra.Text = "Nueva Compra";
+            this.btNuevaCompra.UseVisualStyleBackColor = true;
+            this.btNuevaCompra.Click += new System.EventHandler(this.btNuevaCompra_Click);
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(769, 581);
+            this.Controls.Add(this.btNuevaCompra);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Compras";
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btNuevaCompra;
     }
 }

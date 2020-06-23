@@ -135,6 +135,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Compra.cs" />
+    <Compile Include="Clases\DetalleCompra.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Clases\Rubro.cs" />
+    <Compile Include="Clases\Ubicacion.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -155,6 +161,18 @@
     </Compile>
     <Compile Include="Vistas\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\NuevaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\NuevaCompra.Designer.cs">
+      <DependentUpon>NuevaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\NuevoRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\NuevoRubro.Designer.cs">
+      <DependentUpon>NuevoRubro.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Proveedores.cs">
       <SubType>Form</SubType>
@@ -191,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\NuevaCompra.resx">
+      <DependentUpon>NuevaCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>

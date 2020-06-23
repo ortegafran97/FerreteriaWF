@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FerreteriaWF.Clases;
 
 namespace FerreteriaWF
 {
@@ -18,7 +19,7 @@ namespace FerreteriaWF
         {
             InitializeComponent();
             conexion = new ConexionBD();
-            AbrirFormHijo(new Vistas.Inicio(conexion.UltimasCompras()));
+            AbrirFormHijo(new Vistas.Inicio(conexion.UltimasCompras()));           
         }
 
         private void FormFerreteria_Load(object sender, EventArgs e)
@@ -45,12 +46,13 @@ namespace FerreteriaWF
 
         private void btInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Vistas.Inicio());
+            //AbrirFormHijo(new Vistas.Inicio());
+            AbrirFormHijo(new Vistas.Inicio(conexion.UltimasCompras()));
         }
 
         private void btCompras_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Vistas.Compras());
+            AbrirFormHijo(new Vistas.Compras(conexion));
         }
 
         private void btStock_Click(object sender, EventArgs e)

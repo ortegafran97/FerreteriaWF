@@ -30,6 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.tablaRubros = new System.Windows.Forms.DataGridView();
+            this.btNuevoRubro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             this.tablaRubros.Size = new System.Drawing.Size(279, 178);
             this.tablaRubros.TabIndex = 2;
             // 
+            // btNuevoRubro
+            // 
+            this.btNuevoRubro.Location = new System.Drawing.Point(302, 38);
+            this.btNuevoRubro.Name = "btNuevoRubro";
+            this.btNuevoRubro.Size = new System.Drawing.Size(123, 23);
+            this.btNuevoRubro.TabIndex = 3;
+            this.btNuevoRubro.Text = "Nuevo Rubro";
+            this.btNuevoRubro.UseVisualStyleBackColor = true;
+            this.btNuevoRubro.Click += new System.EventHandler(this.btNuevoRubro_Click);
+            // 
             // Rubros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btNuevoRubro);
             this.Controls.Add(this.tablaRubros);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView tablaRubros;
+        private System.Windows.Forms.Button btNuevoRubro;
     }
 }

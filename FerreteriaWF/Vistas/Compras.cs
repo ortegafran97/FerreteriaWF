@@ -12,10 +12,15 @@ namespace FerreteriaWF.Vistas
 {
     public partial class Compras : Form
     {
+        ConexionBD con;
         public Compras()
         {
+            InitializeComponent();            
+        }
+        public Compras(ConexionBD c)
+        {
             InitializeComponent();
-            
+            con = c;
         }
 
         private void fontDialog1_Apply(object sender, EventArgs e)
@@ -31,6 +36,11 @@ namespace FerreteriaWF.Vistas
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btNuevaCompra_Click(object sender, EventArgs e)
+        {
+            new NuevaCompra(con.Productos(),con).Show();
         }
     }
 }

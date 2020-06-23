@@ -21,12 +21,17 @@ namespace FerreteriaWF.Vistas
         {
             InitializeComponent();
             tablaRubros.DataSource = dt;
-            //tablaRubros.
         }
 
         private void Rubros_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btNuevoRubro_Click(object sender, EventArgs e)
+        {
+            /*Crear rubro*/
+
         }
     }
 }

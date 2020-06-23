@@ -17,7 +17,8 @@ namespace FerreteriaWF
         public FormFerreteria()
         {
             InitializeComponent();
-            conexion = new ConexionBD();            
+            conexion = new ConexionBD();
+            AbrirFormHijo(new Vistas.Inicio(conexion.UltimasCompras()));
         }
 
         private void FormFerreteria_Load(object sender, EventArgs e)

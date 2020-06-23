@@ -113,5 +113,40 @@ namespace FerreteriaWF
             }
         }
 
+        public DataTable UltimasCompras(int cantidad)
+        {
+            string consulta = "Select * from compras natural join proveedor order  by fecha desc limit " + cantidad + ";";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            try
+            {
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error de consulta: " + e.Message);
+                return new DataTable();
+            }
+        }
+        public DataTable UltimasCompras()
+        {
+            string consulta = "Select * from compra natural join proveedor order  by fecha desc limit 20;";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            try
+            {
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error de consulta: " + e.Message);
+                return new DataTable();
+            }
+        }
+
     }
 }

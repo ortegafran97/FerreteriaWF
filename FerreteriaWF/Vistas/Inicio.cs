@@ -16,5 +16,15 @@ namespace FerreteriaWF.Vistas
         {
             InitializeComponent();
         }
+        public Inicio(DataTable compras)
+        {
+            InitializeComponent();
+            tablaCompras.DataSource = compras;
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

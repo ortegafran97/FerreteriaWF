@@ -17,7 +17,7 @@ namespace FerreteriaWF
          * 2. Password (con la que hayan asignado ustedes a su cuenta)
          * y DataBase (si no se llama igual)
         */
-        private string stringConnection = "Username= postgres; Password = Burro.2909; Host= localhost;Port =5432 ; Database = Ferreteria";
+        private string stringConnection = "Username= postgres; Password = 123; Host= localhost;Port =5432 ; Database = Ferreteria";
         private NpgsqlConnection conection;
 
         public ConexionBD()
@@ -221,7 +221,13 @@ namespace FerreteriaWF
                 return null;
             }
         }
-
+        public int InsertRubro(string nombre)
+        {
+            string consulta = "INSERT into Rubro VALUES ('" + nombre + "');";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+            cmd.ExecuteNonQuery();
+            return 1;
+        }
 
     }
 }

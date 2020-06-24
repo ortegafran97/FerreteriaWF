@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btRubros = new System.Windows.Forms.Button();
             this.btProveedores = new System.Windows.Forms.Button();
             this.btStock = new System.Windows.Forms.Button();
             this.btCompras = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
-            this.btRubros = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,16 @@
             this.panelBotones.Size = new System.Drawing.Size(134, 470);
             this.panelBotones.TabIndex = 0;
             // 
+            // btRubros
+            // 
+            this.btRubros.Location = new System.Drawing.Point(9, 125);
+            this.btRubros.Name = "btRubros";
+            this.btRubros.Size = new System.Drawing.Size(122, 23);
+            this.btRubros.TabIndex = 4;
+            this.btRubros.Text = "btRubros";
+            this.btRubros.UseVisualStyleBackColor = true;
+            this.btRubros.Click += new System.EventHandler(this.btRubros_click);
+            // 
             // btProveedores
             // 
             this.btProveedores.Location = new System.Drawing.Point(9, 96);
@@ -116,16 +126,6 @@
             this.btInicio.Text = "btInicio";
             this.btInicio.UseVisualStyleBackColor = true;
             this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
-            // 
-            // btRubros
-            // 
-            this.btRubros.Location = new System.Drawing.Point(9, 125);
-            this.btRubros.Name = "btRubros";
-            this.btRubros.Size = new System.Drawing.Size(122, 23);
-            this.btRubros.TabIndex = 4;
-            this.btRubros.Text = "btRubros";
-            this.btRubros.UseVisualStyleBackColor = true;
-            this.btRubros.Click += new System.EventHandler(this.btRubros_click);
             // 
             // FormFerreteria
             // 

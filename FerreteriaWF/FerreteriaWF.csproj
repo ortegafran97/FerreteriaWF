@@ -213,6 +213,9 @@
     <EmbeddedResource Include="Vistas\NuevaCompra.resx">
       <DependentUpon>NuevaCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\NuevoRubro.resx">
+      <DependentUpon>NuevoRubro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>

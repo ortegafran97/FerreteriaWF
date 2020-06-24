@@ -27,7 +27,7 @@ namespace FerreteriaWF
             
         }
 
-        private void AbrirFormHijo(Form hijo)
+        public void AbrirFormHijo(Form hijo)
         {
             //Cambia el contenido de {PanelContenedor} por {hijo}
             if (this.PanelContenedor.Controls.Count > 0) this.PanelContenedor.Controls.RemoveAt(0);
@@ -73,6 +73,11 @@ namespace FerreteriaWF
         {
             DataTable rubros = conexion.Rubros();
             AbrirFormHijo(new Vistas.Rubros(rubros));
+        }
+        private void btNuevoRubros_click(object sender, EventArgs e)
+        {
+            DataTable rubros = conexion.Rubros();
+            AbrirFormHijo(new Vistas.NuevoRubro());
         }
 
         private void FormFerreteria_FormClosed(object sender, FormClosedEventArgs e)

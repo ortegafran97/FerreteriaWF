@@ -40,7 +40,12 @@ namespace FerreteriaWF.Vistas
 
         private void btNuevaCompra_Click(object sender, EventArgs e)
         {
-            new NuevaCompra(con.Productos(),con).Show();
+            new NuevaCompra().Show();
+        }
+
+        private void Compras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

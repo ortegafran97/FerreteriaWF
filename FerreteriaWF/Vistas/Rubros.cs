@@ -22,7 +22,9 @@ namespace FerreteriaWF.Vistas
             InitializeComponent();
             tablaRubros.DataSource = dt;
         }
-
+        public void AbrirFormHijo(Form hijo)
+        {
+        }
         private void Rubros_Load(object sender, EventArgs e)
         {
             
@@ -31,6 +33,8 @@ namespace FerreteriaWF.Vistas
         private void btNuevoRubro_Click(object sender, EventArgs e)
         {
             /*Crear rubro*/
+            new NuevoRubro().Show();
+
 
         }
     }

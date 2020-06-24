@@ -156,6 +156,12 @@
     <Compile Include="Vistas\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ElimanrRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ElimanrRubro.Designer.cs">
+      <DependentUpon>ElimanrRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ElimanrRubro.resx">
+      <DependentUpon>ElimanrRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

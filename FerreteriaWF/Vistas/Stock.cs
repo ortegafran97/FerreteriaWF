@@ -12,6 +12,7 @@ namespace FerreteriaWF.Vistas
 {
     public partial class Stock : Form
     {
+        //TODO: agregar combobox de rubros para ver sus rubros
         public Stock()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace FerreteriaWF.Vistas
 
         private void Stock_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

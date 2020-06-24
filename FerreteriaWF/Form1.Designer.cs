@@ -58,7 +58,7 @@
             this.PanelContenedor.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.PanelContenedor.Location = new System.Drawing.Point(144, 4);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(781, 461);
+            this.PanelContenedor.Size = new System.Drawing.Size(790, 461);
             this.PanelContenedor.TabIndex = 1;
             this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -72,9 +72,9 @@
             this.panelBotones.Controls.Add(this.btStock);
             this.panelBotones.Controls.Add(this.btCompras);
             this.panelBotones.Controls.Add(this.btInicio);
-            this.panelBotones.Location = new System.Drawing.Point(4, 4);
+            this.panelBotones.Location = new System.Drawing.Point(0, 0);
             this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(134, 470);
+            this.panelBotones.Size = new System.Drawing.Size(138, 477);
             this.panelBotones.TabIndex = 0;
             // 
             // btRubros

@@ -21,6 +21,7 @@ namespace FerreteriaWF.Vistas
         {
             InitializeComponent();
             con = c;
+            tablaCompraDetalle.DataSource = con.CompraDetalle();
         }
 
         private void fontDialog1_Apply(object sender, EventArgs e)

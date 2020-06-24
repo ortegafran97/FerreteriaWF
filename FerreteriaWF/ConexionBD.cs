@@ -13,11 +13,11 @@ namespace FerreteriaWF
     public class ConexionBD
     {
         /**TODO: Para que funcione deben cambiar 
-         * 1. Username (si usan otro que sea 'postgres'), 
+         * 1. Username (si usan otro que no sea 'postgres'), 
          * 2. Password (con la que hayan asignado ustedes a su cuenta)
          * y DataBase (si no se llama igual)
         */
-        private string stringConnection = "Username= postgres; Password = 123; Host= localhost;Port =5432 ; Database = Ferreteria";
+        private string stringConnection = "Username= postgres; Password = Burro.2909; Host= localhost;Port =5432 ; Database = Ferreteria";
         private NpgsqlConnection conection;
 
         public ConexionBD()
@@ -200,13 +200,14 @@ namespace FerreteriaWF
         }
         public DataTable UltimasCompras()
         {
-            string consulta = "Select * from compra natural join proveedor order  by fecha desc limit 20;";
+            string consulta = "Select * from compra natural join proveedor order by fecha desc limit 20;";
             NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
             try
             {
                 DataTable dt = new DataTable();
                 NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
                 adapter.Fill(dt);
+                Console.WriteLine("Consulta realizada: ultimas compras");
                 return dt;
             }
             catch (Exception e)
@@ -298,6 +299,24 @@ namespace FerreteriaWF
             {
                 Console.WriteLine("Fallo al encontrar CUIT: {0}", e.Message);
                 return "";
+            }
+        }
+
+        public DataTable CompraDetalle()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select nombreproducto,d.cantidad,d.precio from detallecompra as d full outer join producto as p on p.idprod = d.idproducto;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Compras join DetalleCompra: {0}",e.Message);
+                return dt;
             }
         }
 

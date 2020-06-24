@@ -32,7 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbProveedores = new System.Windows.Forms.ComboBox();
-            this.lblRubro = new System.Windows.Forms.Label();
+            this.contadorCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btGuardar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbCosto = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.contadorCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // cbProductos
@@ -65,33 +72,100 @@
             // cbProveedores
             // 
             this.cbProveedores.FormattingEnabled = true;
-            this.cbProveedores.Location = new System.Drawing.Point(12, 85);
+            this.cbProveedores.Location = new System.Drawing.Point(9, 82);
             this.cbProveedores.Name = "cbProveedores";
             this.cbProveedores.Size = new System.Drawing.Size(168, 21);
             this.cbProveedores.TabIndex = 2;
             // 
-            // lblRubro
+            // contadorCantidad
             // 
-            this.lblRubro.AutoSize = true;
-            this.lblRubro.Location = new System.Drawing.Point(200, 28);
-            this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(36, 13);
-            this.lblRubro.TabIndex = 4;
-            this.lblRubro.Text = "Rubro";
+            this.contadorCantidad.Location = new System.Drawing.Point(9, 187);
+            this.contadorCantidad.Name = "contadorCantidad";
+            this.contadorCantidad.Size = new System.Drawing.Size(165, 20);
+            this.contadorCantidad.TabIndex = 4;
+            this.contadorCantidad.ValueChanged += new System.EventHandler(this.contadorCantidad_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "4. Seleccionar Cantidad";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(9, 226);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(50, 13);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "{TOTAL}";
+            // 
+            // btGuardar
+            // 
+            this.btGuardar.Location = new System.Drawing.Point(9, 267);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(75, 39);
+            this.btGuardar.TabIndex = 7;
+            this.btGuardar.Text = "Registrar Compra";
+            this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Location = new System.Drawing.Point(99, 267);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(75, 39);
+            this.btCancelar.TabIndex = 8;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "3. Indicar costo de producto";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // tbCosto
+            // 
+            this.tbCosto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCosto.Location = new System.Drawing.Point(9, 137);
+            this.tbCosto.Name = "tbCosto";
+            this.tbCosto.Size = new System.Drawing.Size(165, 20);
+            this.tbCosto.TabIndex = 11;
             // 
             // NuevaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblRubro);
+            this.ClientSize = new System.Drawing.Size(189, 323);
+            this.Controls.Add(this.tbCosto);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btGuardar);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.contadorCantidad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbProveedores);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbProductos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NuevaCompra";
-            this.Text = "NuevaCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Nueva Compra";
             this.Load += new System.EventHandler(this.NuevaCompra_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.contadorCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +177,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbProveedores;
-        private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.NumericUpDown contadorCantidad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btGuardar;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbCosto;
     }
 }

@@ -33,7 +33,6 @@ namespace FerreteriaWF
                 Console.WriteLine("Error de conexion: "+ e.Message);
             }
         }
-
         public bool Estado() //Retorna true si la db esta conectada
         {
             
@@ -116,6 +115,27 @@ namespace FerreteriaWF
             }
         }
 
+        public Producto Producto(string s)
+        {
+            string consulta = "SELECT * FROM producto " +
+                                "where nombreproducto = '" + s + "'" +
+                                "limit 1;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                DataTable tabla = new DataTable();
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(tabla);
+                DataRow dr = tabla.Rows[0];
+                Producto x = new Producto(dr);
+                return x;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("No se pudo crear Producto");
+                return null;
+            }
+        }
         public Producto Producto(int id) //BUSCA POR ID
         {
             string consulta = "Select * from Producto where idprod = " + id+";";
@@ -196,12 +216,46 @@ namespace FerreteriaWF
             }
         }
 
-        public void NuevaCompra(Clases.Producto p)
-        {
-            /**
-             * Compramos X cantidad de un producto -> si no teniamos el producto crear nuevo,
-             * si ya lo teniamos sumar el nuevo stock
-             */  
+        public void NuevaCompra(Compra compra)
+        {           
+            try
+            {
+                string consultaid = "select count(*) from compra";
+                NpgsqlCommand cmdID = new NpgsqlCommand(consultaid, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmdID);
+                DataTable id = new DataTable();
+                adp.Fill(id);
+                int idCompra = int.Parse(id.Rows[0]["count"].ToString())+1;                
+                string insert = "INSERT INTO compra VALUES ("+idCompra+",'"+compra.CUIT+"','"+ NpgsqlTypes.NpgsqlDateTime.Now.ToDateTime().ToShortDateString() + "',"+compra.Total+");";
+                NpgsqlCommand cmdCompra = new NpgsqlCommand(insert, conection);
+                if (cmdCompra.ExecuteNonQuery() > 0)
+                {
+                    foreach (DetalleCompra detalle in compra.Items)
+                    {
+                        string insertDetalle = "INSERT INTO detallecompra values (" + idCompra + "," + detalle.Idproducto + "," + detalle.Cantidad + "," + detalle.Precio + ");";
+                        NpgsqlCommand cmdDet = new NpgsqlCommand(insertDetalle, conection);
+                        cmdDet.ExecuteNonQuery();
+
+                        string updateString = "UPDATE producto " +
+                                            "set cantidad = cantidad + "+detalle.Cantidad +
+                                            " where idprod = "+detalle.Idproducto+";";
+                        NpgsqlCommand cmdUp = new NpgsqlCommand(updateString, conection);
+                        cmdUp.ExecuteNonQuery();
+
+                    }
+                    Console.WriteLine("Insertada Compra y DetalleCompra's");
+                }
+                else
+                {
+                    Console.WriteLine("No se inserto la compra");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al registrar nueva compra: {0}", e.Message);
+                return;
+            }
+
         }
 
         public DataTable VendedoresDeProducto(string nombreProd)
@@ -219,6 +273,24 @@ namespace FerreteriaWF
             {
                 Console.WriteLine("Fallo en consulta -> VendedoresDeProducto: {0}", e.Message);
                 return null;
+            }
+        }
+
+        public string CUIT(string proveedor)
+        {
+            string consulta = "select * from proveedor where nombre ='" + proveedor + "';";
+            NpgsqlCommand cmd = new NpgsqlCommand(consulta,conection);
+            try
+            {
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                return dt.Rows[0]["cuit"].ToString();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Fallo al encontrar CUIT: {0}", e.Message);
+                return "";
             }
         }
 

@@ -64,6 +64,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Compras";
             this.Text = "Compras";
+            this.Load += new System.EventHandler(this.Compras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

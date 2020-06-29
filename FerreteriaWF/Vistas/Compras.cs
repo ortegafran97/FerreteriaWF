@@ -41,7 +41,7 @@ namespace FerreteriaWF.Vistas
 
         private void btNuevaCompra_Click(object sender, EventArgs e)
         {
-            new NuevaCompra().Show();
+            new NuevaCompra(con.Productos(),con).Show();
         }
 
         private void Compras_Load(object sender, EventArgs e)

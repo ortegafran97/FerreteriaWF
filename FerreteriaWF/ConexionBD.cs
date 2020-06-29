@@ -221,12 +221,12 @@ namespace FerreteriaWF
         {           
             try
             {
-                string consultaid = "select count(*) from compra";
+                string consultaid = "select max(idcompra) from compra";
                 NpgsqlCommand cmdID = new NpgsqlCommand(consultaid, conection);
                 NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmdID);
                 DataTable id = new DataTable();
                 adp.Fill(id);
-                int idCompra = int.Parse(id.Rows[0]["count"].ToString())+1;                
+                int idCompra = int.Parse(id.Rows[0]["max"].ToString())+1;                
                 string insert = "INSERT INTO compra VALUES ("+idCompra+",'"+compra.CUIT+"','"+ NpgsqlTypes.NpgsqlDateTime.Now.ToDateTime().ToShortDateString() + "',"+compra.Total+");";
                 NpgsqlCommand cmdCompra = new NpgsqlCommand(insert, conection);
                 if (cmdCompra.ExecuteNonQuery() > 0)

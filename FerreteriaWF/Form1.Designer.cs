@@ -36,6 +36,7 @@
             this.btStock = new System.Windows.Forms.Button();
             this.btCompras = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelBotones.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelBotones.Controls.Add(this.button1);
             this.panelBotones.Controls.Add(this.btRubros);
             this.panelBotones.Controls.Add(this.btProveedores);
             this.panelBotones.Controls.Add(this.btStock);
@@ -127,6 +129,16 @@
             this.btInicio.UseVisualStyleBackColor = true;
             this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "C- Group by";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormFerreteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Button btCompras;
         private System.Windows.Forms.Button btInicio;
         private System.Windows.Forms.Button btRubros;
+        private System.Windows.Forms.Button button1;
     }
 }
 

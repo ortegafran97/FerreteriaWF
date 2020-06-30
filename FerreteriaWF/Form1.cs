@@ -84,5 +84,11 @@ namespace FerreteriaWF
         {
             conexion.Cerrar();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //new group().Show();
+            AbrirFormHijo(new Vistas.C_GroupBy(conexion.conection));
+        }
     }
 }

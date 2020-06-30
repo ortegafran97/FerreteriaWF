@@ -54,6 +54,7 @@
             this.tablaRubros.Name = "tablaRubros";
             this.tablaRubros.Size = new System.Drawing.Size(279, 178);
             this.tablaRubros.TabIndex = 2;
+            this.tablaRubros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaRubros_CellContentClick);
             // 
             // btNuevoRubro
             // 

@@ -42,5 +42,10 @@ namespace FerreteriaWF.Vistas
         {
             new ElimanrRubro().Show();
         }
+
+        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -422,6 +422,39 @@ namespace FerreteriaWF
                 return lista;
             }
         }
-
+        public DataTable ProveedoresRubros()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select * from ProvRub;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores y sus rubros: {0}", e.Message);
+                return dt;
+            }
+        }
+        public DataTable ProveedoresCincomil()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select nombre, sum(montototal) as Total from compra natural join proveedor group by nombre having sum(montototal) >= 5000";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores que vendieron mas de 5 mil pesos: {0}", e.Message);
+                return dt;
+            }
+        }
     }
 }

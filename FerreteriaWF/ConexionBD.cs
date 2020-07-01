@@ -370,7 +370,7 @@ namespace FerreteriaWF
             {
                 cmd.CommandText = consulta;
                 cmd.ExecuteNonQuery();
-                Console.WriteLine("Producto {0} modificado.", viejo.IdProducto);
+                Console.WriteLine("Producto modificado.");
             }
             catch(Exception e)
             {

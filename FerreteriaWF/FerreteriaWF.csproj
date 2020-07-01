@@ -162,6 +162,12 @@
     <Compile Include="Vistas\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\D-Agregacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\D-Agregacion.Designer.cs">
+      <DependentUpon>D-Agregacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ElimanrRubro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\D-Agregacion.resx">
+      <DependentUpon>D-Agregacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ElimanrRubro.resx">
       <DependentUpon>ElimanrRubro.cs</DependentUpon>

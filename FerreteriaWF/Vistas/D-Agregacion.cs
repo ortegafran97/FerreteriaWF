@@ -18,16 +18,21 @@ namespace FerreteriaWF.Vistas
         {
 
             InitializeComponent();
-            DataTable proveedor = new DataTable();
-            string consulta = "select cuit,nombre from proveedor natural join vende group by cuit having count(nombrerubro) >2;";
+            DataTable tabla = new DataTable();
+            string consulta = "select * from producto  where precio = (select max(precio) from producto);";
 
             NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
-            adapter.Fill(proveedor);
-            tablaGroupBy.DataSource = proveedor;
+            adapter.Fill(tabla);
+            tablaAgregacion.DataSource = tabla;
         }
 
         private void D_Agregacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,17 +31,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btH = new System.Windows.Forms.Button();
+            this.btG = new System.Windows.Forms.Button();
+            this.btF = new System.Windows.Forms.Button();
+            this.btE = new System.Windows.Forms.Button();
+            this.btD = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btRubros = new System.Windows.Forms.Button();
             this.btProveedores = new System.Windows.Forms.Button();
             this.btStock = new System.Windows.Forms.Button();
             this.btCompras = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
-            this.btD = new System.Windows.Forms.Button();
-            this.btE = new System.Windows.Forms.Button();
-            this.btF = new System.Windows.Forms.Button();
-            this.btG = new System.Windows.Forms.Button();
-            this.btH = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,52 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(138, 477);
             this.panelBotones.TabIndex = 0;
+            // 
+            // btH
+            // 
+            this.btH.Location = new System.Drawing.Point(9, 299);
+            this.btH.Name = "btH";
+            this.btH.Size = new System.Drawing.Size(122, 23);
+            this.btH.TabIndex = 10;
+            this.btH.Text = "H-";
+            this.btH.UseVisualStyleBackColor = true;
+            // 
+            // btG
+            // 
+            this.btG.Location = new System.Drawing.Point(9, 270);
+            this.btG.Name = "btG";
+            this.btG.Size = new System.Drawing.Size(122, 23);
+            this.btG.TabIndex = 9;
+            this.btG.Text = "G-";
+            this.btG.UseVisualStyleBackColor = true;
+            // 
+            // btF
+            // 
+            this.btF.Location = new System.Drawing.Point(9, 241);
+            this.btF.Name = "btF";
+            this.btF.Size = new System.Drawing.Size(122, 23);
+            this.btF.TabIndex = 8;
+            this.btF.Text = "F-";
+            this.btF.UseVisualStyleBackColor = true;
+            // 
+            // btE
+            // 
+            this.btE.Location = new System.Drawing.Point(9, 212);
+            this.btE.Name = "btE";
+            this.btE.Size = new System.Drawing.Size(122, 23);
+            this.btE.TabIndex = 7;
+            this.btE.Text = "E-";
+            this.btE.UseVisualStyleBackColor = true;
+            // 
+            // btD
+            // 
+            this.btD.Location = new System.Drawing.Point(9, 183);
+            this.btD.Name = "btD";
+            this.btD.Size = new System.Drawing.Size(122, 23);
+            this.btD.TabIndex = 6;
+            this.btD.Text = "D- Agregacion";
+            this.btD.UseVisualStyleBackColor = true;
+            this.btD.Click += new System.EventHandler(this.btD_Click);
             // 
             // button1
             // 
@@ -148,51 +194,6 @@
             this.btInicio.Text = "btInicio";
             this.btInicio.UseVisualStyleBackColor = true;
             this.btInicio.Click += new System.EventHandler(this.btInicio_Click);
-            // 
-            // btD
-            // 
-            this.btD.Location = new System.Drawing.Point(9, 183);
-            this.btD.Name = "btD";
-            this.btD.Size = new System.Drawing.Size(122, 23);
-            this.btD.TabIndex = 6;
-            this.btD.Text = "D- ";
-            this.btD.UseVisualStyleBackColor = true;
-            // 
-            // btE
-            // 
-            this.btE.Location = new System.Drawing.Point(9, 212);
-            this.btE.Name = "btE";
-            this.btE.Size = new System.Drawing.Size(122, 23);
-            this.btE.TabIndex = 7;
-            this.btE.Text = "E-";
-            this.btE.UseVisualStyleBackColor = true;
-            // 
-            // btF
-            // 
-            this.btF.Location = new System.Drawing.Point(9, 241);
-            this.btF.Name = "btF";
-            this.btF.Size = new System.Drawing.Size(122, 23);
-            this.btF.TabIndex = 8;
-            this.btF.Text = "F-";
-            this.btF.UseVisualStyleBackColor = true;
-            // 
-            // btG
-            // 
-            this.btG.Location = new System.Drawing.Point(9, 270);
-            this.btG.Name = "btG";
-            this.btG.Size = new System.Drawing.Size(122, 23);
-            this.btG.TabIndex = 9;
-            this.btG.Text = "G-";
-            this.btG.UseVisualStyleBackColor = true;
-            // 
-            // btH
-            // 
-            this.btH.Location = new System.Drawing.Point(9, 299);
-            this.btH.Name = "btH";
-            this.btH.Size = new System.Drawing.Size(122, 23);
-            this.btH.TabIndex = 10;
-            this.btH.Text = "H-";
-            this.btH.UseVisualStyleBackColor = true;
             // 
             // FormFerreteria
             // 

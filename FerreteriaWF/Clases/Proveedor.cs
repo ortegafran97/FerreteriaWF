@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaWF.Clases
 {
-    class Proveedor
+    public class Proveedor
     {
         string cuit, nombre, direccion;
         public string CUIT{get;set;}

@@ -13,7 +13,7 @@ namespace FerreteriaWF.Clases
         int idProd,cant;
         float precio;
         Ubicacion ubic;
-        Rubro rubro;
+        Rubro rubr;
 
         public Producto (DataRow s)
         {
@@ -21,8 +21,8 @@ namespace FerreteriaWF.Clases
             idProd = int.Parse(s["idprod"].ToString());
             precio = float.Parse(s["precio"].ToString());
             cant = int.Parse(s["cantidad"].ToString());
-            rubro = new Rubro();
-            rubro.Nombre = s["nombrerubro"].ToString();
+            rubr = new Rubro();
+            rubr.Nombre = s["nombrerubro"].ToString();
 
             //TODO: cambiar ubicacion
             ubic = null;
@@ -51,6 +51,11 @@ namespace FerreteriaWF.Clases
         public Ubicacion Ubic {
             get { return ubic; }
             set { ubic = value; }
+        }
+        public Rubro Rubro
+        {
+            get {return rubr; }
+            set {rubr = value; }
         }
         
     }

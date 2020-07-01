@@ -204,6 +204,18 @@
     <Compile Include="Vistas\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ProveedoresCincomil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ProveedoresCincomil.Designer.cs">
+      <DependentUpon>ProveedoresCincomil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ProveedoresYRubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ProveedoresYRubros.Designer.cs">
+      <DependentUpon>ProveedoresYRubros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Rubros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ProveedoresCincomil.resx">
+      <DependentUpon>ProveedoresCincomil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ProveedoresYRubros.resx">
+      <DependentUpon>ProveedoresYRubros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Rubros.resx">
       <DependentUpon>Rubros.cs</DependentUpon>

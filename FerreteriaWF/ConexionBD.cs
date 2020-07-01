@@ -17,7 +17,7 @@ namespace FerreteriaWF
          * 2. Password (con la que hayan asignado ustedes a su cuenta)
          * y DataBase (si no se llama igual)
         */
-        public string stringConnection = "Username= postgres; Password = Burro.2909; Host= localhost;Port =5432 ; Database = Ferreteria";
+        public string stringConnection = "Username= postgres; Password = 1234; Host= localhost;Port =5432 ; Database = Ferreteria";
         public NpgsqlConnection conection;
         NpgsqlCommand cmd;
 
@@ -377,7 +377,39 @@ namespace FerreteriaWF
                 Console.WriteLine("Error al modificar producto: {0}",e.Message);
             }
         }
-
-
+        public DataTable ProveedoresRubros()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select * from ProvRub;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores y sus rubros: {0}", e.Message);
+                return dt;
+            }
+        }
+        public DataTable ProveedoresCincomil()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select nombre, sum(montototal) as Total from compra natural join proveedor group by nombre having sum(montototal) >= 5000";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores que vendieron mas de 5 mil pesos: {0}", e.Message);
+                return dt;
+            }
+        }
     }
 }

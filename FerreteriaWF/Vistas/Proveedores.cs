@@ -26,5 +26,10 @@ namespace FerreteriaWF.Vistas
         {
 
         }
+
+        private void btNuevoProveedor_Click(object sender, EventArgs e)
+        {
+            new NuevoProveedor(new ConexionBD()).Show();
+        }
     }
 }

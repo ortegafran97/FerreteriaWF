@@ -48,5 +48,10 @@ namespace FerreteriaWF.Vistas
         {
 
         }
+
+        private void btBajoStock_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

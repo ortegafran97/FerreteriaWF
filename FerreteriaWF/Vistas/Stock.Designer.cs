@@ -46,8 +46,9 @@
             // 
             // tablaProductos
             // 
-            this.tablaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tablaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaProductos.Location = new System.Drawing.Point(17, 37);
             this.tablaProductos.Name = "tablaProductos";
@@ -56,6 +57,7 @@
             // 
             // btEditProd
             // 
+            this.btEditProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btEditProd.Location = new System.Drawing.Point(713, 37);
             this.btEditProd.Name = "btEditProd";
             this.btEditProd.Size = new System.Drawing.Size(75, 38);

@@ -377,7 +377,20 @@ namespace FerreteriaWF
                 Console.WriteLine("Error al modificar producto: {0}",e.Message);
             }
         }
-
+        public void NuevoProveedor(Proveedor p)
+        {
+            string consulta = "INSERT INTO proveedor VALUES ('" + p.CUIT + "','" + p.Nombre + "','" + p.Direccion + "');";
+            cmd.CommandText = consulta;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Nuevo proveedor insertado: {0}",p.Nombre);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error al insertar nuevo proveedor: {0}", e.Message);
+            } 
+        }
 
     }
 }

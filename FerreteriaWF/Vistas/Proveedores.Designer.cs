@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tablaProveedores = new System.Windows.Forms.DataGridView();
+            this.btNuevoProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,14 +52,26 @@
             this.tablaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaProveedores.Location = new System.Drawing.Point(17, 37);
             this.tablaProveedores.Name = "tablaProveedores";
-            this.tablaProveedores.Size = new System.Drawing.Size(771, 228);
+            this.tablaProveedores.Size = new System.Drawing.Size(690, 228);
             this.tablaProveedores.TabIndex = 2;
+            // 
+            // btNuevoProveedor
+            // 
+            this.btNuevoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btNuevoProveedor.Location = new System.Drawing.Point(713, 37);
+            this.btNuevoProveedor.Name = "btNuevoProveedor";
+            this.btNuevoProveedor.Size = new System.Drawing.Size(75, 38);
+            this.btNuevoProveedor.TabIndex = 3;
+            this.btNuevoProveedor.Text = "Nuevo Proveedor";
+            this.btNuevoProveedor.UseVisualStyleBackColor = true;
+            this.btNuevoProveedor.Click += new System.EventHandler(this.btNuevoProveedor_Click);
             // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btNuevoProveedor);
             this.Controls.Add(this.tablaProveedores);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,5 +88,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView tablaProveedores;
+        private System.Windows.Forms.Button btNuevoProveedor;
     }
 }

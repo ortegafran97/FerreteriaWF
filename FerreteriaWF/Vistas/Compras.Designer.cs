@@ -32,6 +32,7 @@
             this.btNuevaCompra = new System.Windows.Forms.Button();
             this.tablaCompraDetalle = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.btBajoStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCompraDetalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(268, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 1;
@@ -48,7 +49,8 @@
             // 
             // btNuevaCompra
             // 
-            this.btNuevaCompra.Location = new System.Drawing.Point(13, 10);
+            this.btNuevaCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btNuevaCompra.Location = new System.Drawing.Point(372, 50);
             this.btNuevaCompra.Name = "btNuevaCompra";
             this.btNuevaCompra.Size = new System.Drawing.Size(108, 35);
             this.btNuevaCompra.TabIndex = 2;
@@ -58,27 +60,41 @@
             // 
             // tablaCompraDetalle
             // 
+            this.tablaCompraDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tablaCompraDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaCompraDetalle.Location = new System.Drawing.Point(13, 80);
+            this.tablaCompraDetalle.Location = new System.Drawing.Point(13, 50);
             this.tablaCompraDetalle.Name = "tablaCompraDetalle";
-            this.tablaCompraDetalle.Size = new System.Drawing.Size(353, 473);
+            this.tablaCompraDetalle.Size = new System.Drawing.Size(353, 503);
             this.tablaCompraDetalle.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 61);
+            this.label2.Location = new System.Drawing.Point(12, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ultimos productos comprados:";
+            // 
+            // btBajoStock
+            // 
+            this.btBajoStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btBajoStock.Location = new System.Drawing.Point(372, 91);
+            this.btBajoStock.Name = "btBajoStock";
+            this.btBajoStock.Size = new System.Drawing.Size(108, 35);
+            this.btBajoStock.TabIndex = 5;
+            this.btBajoStock.Text = "Listado de productos con bajo stock";
+            this.btBajoStock.UseVisualStyleBackColor = true;
+            this.btBajoStock.Click += new System.EventHandler(this.btBajoStock_Click);
             // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(769, 581);
+            this.ClientSize = new System.Drawing.Size(1147, 581);
+            this.Controls.Add(this.btBajoStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tablaCompraDetalle);
             this.Controls.Add(this.btNuevaCompra);
@@ -99,5 +115,6 @@
         private System.Windows.Forms.Button btNuevaCompra;
         private System.Windows.Forms.DataGridView tablaCompraDetalle;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btBajoStock;
     }
 }

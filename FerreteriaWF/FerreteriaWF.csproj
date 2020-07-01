@@ -150,6 +150,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\BajoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\BajoStock.Designer.cs">
+      <DependentUpon>BajoStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\C-GroupBy.cs">
       <SubType>Form</SubType>
     </Compile>

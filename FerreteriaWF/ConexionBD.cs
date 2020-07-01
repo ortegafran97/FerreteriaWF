@@ -392,5 +392,36 @@ namespace FerreteriaWF
             } 
         }
 
+        public List<Producto> BajoStock()
+        {
+            string consulta = "SELECT * FROM pocostock;";
+            cmd.CommandText = consulta;
+            List<Producto> lista = new List<Producto>();
+            try
+            {
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    Producto p = new Producto
+                    {
+                        IdProducto = int.Parse(dt.Rows[i]["idprod"].ToString()),
+                        Nombre = dt.Rows[i]["nombreproducto"].ToString(),
+                        Rubro = new Rubro(dt.Rows[i]["idprod"].ToString()),
+                        Cantidad = int.Parse(dt.Rows[i]["idprod"].ToString()),
+                        Precio = float.Parse(dt.Rows[i]["idprod"].ToString())
+                    };
+                    lista.Add(p);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+
+                return lista;
+            }
+        }
+
     }
 }

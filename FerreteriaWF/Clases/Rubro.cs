@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace FerreteriaWF.Clases
 {
-    class Rubro
+    public class Rubro
     {
         string nombre;
-        public string Nombre {get;set; }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        public Rubro() { }
+        public Rubro(string s)
+        {
+            nombre = s;
+        }
     }
 }

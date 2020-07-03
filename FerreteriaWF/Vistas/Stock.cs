@@ -12,6 +12,7 @@ namespace FerreteriaWF.Vistas
 {
     public partial class Stock : Form
     {
+        ConexionBD conexion;
         //TODO: agregar combobox de rubros para ver sus rubros
         public Stock()
         {
@@ -20,12 +21,18 @@ namespace FerreteriaWF.Vistas
         public Stock(DataTable dt)
         {
             InitializeComponent();
-            tablaProductos.DataSource = dt;
+            tablaProductos.DataSource = dt;            
         }
 
 
         private void Stock_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btEditProd_Click(object sender, EventArgs e)
+        {
+            new Vistas.EditProducto(new ConexionBD()).Show();
         }
     }
 }

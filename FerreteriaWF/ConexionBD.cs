@@ -17,8 +17,9 @@ namespace FerreteriaWF
          * 2. Password (con la que hayan asignado ustedes a su cuenta)
          * y DataBase (si no se llama igual)
         */
-        public string stringConnection = "Username= postgres; Password = 123; Host= localhost;Port =5432 ; Database = Ferreteria";
+        public string stringConnection = "Username= postgres; Password = Burro.2909; Host= localhost;Port =5432 ; Database = Ferreteria";
         public NpgsqlConnection conection;
+        NpgsqlCommand cmd;
 
         public ConexionBD()
         {
@@ -26,6 +27,8 @@ namespace FerreteriaWF
             {
                 conection = new NpgsqlConnection(stringConnection);
                 conection.Open();
+                cmd = new NpgsqlCommand();
+                cmd.Connection = conection;
                 Console.WriteLine("Conectado a BD: "+ conection.Database + "\nUsuario: "+ conection.UserName);
             }
             catch(Exception e)
@@ -162,7 +165,7 @@ namespace FerreteriaWF
                 return null;
             }
         }
-        public DataTable Productos() // LISTADO DE PRODUCTOS
+        public DataTable Productos() // TABLA DE PRODUCTOS
         {
             DataTable dt = new DataTable();
             string consulta = "SELECT * FROM Producto;";
@@ -179,6 +182,42 @@ namespace FerreteriaWF
                 Console.WriteLine("Error de consulta: " + e.Message);
                 return new DataTable();
             }
+        }
+
+        public List<Producto> ListaProductos()
+        {
+            DataTable dt = Productos();
+            List<Producto> lista = new List<Producto>();
+            int cont = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                /*producto (nombrerubro,nombreproducto,precio,cantidad)*/
+                Producto p = new Producto
+                {
+                    IdProducto = int.Parse(dt.Rows[i]["idprod"].ToString()),
+                    Nombre = dt.Rows[i]["nombreproducto"].ToString(),
+                    Cantidad = int.Parse(dt.Rows[i]["cantidad"].ToString()),
+                    Precio = float.Parse(dt.Rows[i]["precio"].ToString()),
+                    Rubro = new Rubro(dt.Rows[i]["nombrerubro"].ToString())
+                };
+                lista.Add(p);
+                cont++;
+            }
+            Console.WriteLine("Se crearon {0} de {1} productos. ", cont, dt.Rows.Count);
+            return lista;
+        }
+
+        public List<Rubro> ListaRubros()
+        {
+            DataTable dt = Rubros();
+            List<Rubro> lista = new List<Rubro>();
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                Rubro r = new Rubro(dt.Rows[i]["nombrerubro"].ToString());
+                lista.Add(r);
+            }
+            Console.WriteLine("Lista de rubros creada");
+            return lista;
         }
 
         public DataTable UltimasCompras(int cantidad)
@@ -320,6 +359,102 @@ namespace FerreteriaWF
             }
         }
 
+        public void EditProducto(Producto viejo, Producto nuevo)
+        {
+            /*producto (nombrerubro,nombreproducto,precio,cantidad)*/
+            string nombreproducto = nuevo.Nombre;
+            Rubro r = nuevo.Rubro;
+            float precio = nuevo.Precio;
+            string consulta = "UPDATE producto SET nombrerubro='"+r.Nombre+"', nombreproducto='"+nombreproducto+"', precio = "+precio+" WHERE idprod = "+nuevo.IdProducto+";";
+            try
+            {
+                cmd.CommandText = consulta;
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Producto modificado.");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error al modificar producto: {0}",e.Message);
+            }
+        }
+        public void NuevoProveedor(Proveedor p)
+        {
+            string consulta = "INSERT INTO proveedor VALUES ('" + p.CUIT + "','" + p.Nombre + "','" + p.Direccion + "');";
+            cmd.CommandText = consulta;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Nuevo proveedor insertado: {0}",p.Nombre);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error al insertar nuevo proveedor: {0}", e.Message);
+            } 
+        }
 
+        public List<Producto> BajoStock()
+        {
+            string consulta = "SELECT * FROM pocostock;";
+            cmd.CommandText = consulta;
+            List<Producto> lista = new List<Producto>();
+            try
+            {
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    Producto p = new Producto
+                    {
+                        IdProducto = int.Parse(dt.Rows[i]["idprod"].ToString()),
+                        Nombre = dt.Rows[i]["nombreproducto"].ToString(),
+                        Rubro = new Rubro(dt.Rows[i]["idprod"].ToString()),
+                        Cantidad = int.Parse(dt.Rows[i]["idprod"].ToString()),
+                        Precio = float.Parse(dt.Rows[i]["idprod"].ToString())
+                    };
+                    lista.Add(p);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+
+                return lista;
+            }
+        }
+        public DataTable ProveedoresRubros()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select * from ProvRub;";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores y sus rubros: {0}", e.Message);
+                return dt;
+            }
+        }
+        public DataTable ProveedoresCincomil()
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select nombre, sum(montototal) as Total from compra natural join proveedor group by nombre having sum(montototal) >= 5000";
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(consulta, conection);
+                NpgsqlDataAdapter adp = new NpgsqlDataAdapter(cmd);
+                adp.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fallo al obtener Proveedores que vendieron mas de 5 mil pesos: {0}", e.Message);
+                return dt;
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tablaProductos = new System.Windows.Forms.DataGridView();
+            this.btEditProd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,14 +52,26 @@
             this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaProductos.Location = new System.Drawing.Point(17, 37);
             this.tablaProductos.Name = "tablaProductos";
-            this.tablaProductos.Size = new System.Drawing.Size(771, 205);
+            this.tablaProductos.Size = new System.Drawing.Size(690, 205);
             this.tablaProductos.TabIndex = 1;
+            // 
+            // btEditProd
+            // 
+            this.btEditProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEditProd.Location = new System.Drawing.Point(713, 37);
+            this.btEditProd.Name = "btEditProd";
+            this.btEditProd.Size = new System.Drawing.Size(75, 38);
+            this.btEditProd.TabIndex = 2;
+            this.btEditProd.Text = "Editar Producto";
+            this.btEditProd.UseVisualStyleBackColor = true;
+            this.btEditProd.Click += new System.EventHandler(this.btEditProd_Click);
             // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btEditProd);
             this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,5 +88,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView tablaProductos;
+        private System.Windows.Forms.Button btEditProd;
     }
 }

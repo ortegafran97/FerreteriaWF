@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 
 namespace FerreteriaWF.Clases
 {
-    class Proveedor
+    public class Proveedor
     {
         string cuit, nombre, direccion;
-        public string CUIT{get;set;}
-        public string Nombre{get;set;}
-        public string Direccion{get;set;}
+        public string CUIT
+        {
+            get { return cuit; }
+            set { cuit = value; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre= value; }
+        }
+        public string Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
     }
 }

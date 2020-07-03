@@ -10,26 +10,24 @@ using System.Windows.Forms;
 
 namespace FerreteriaWF.Vistas
 {
-    public partial class Proveedores : Form
+    public partial class ProveedoresCincomil : Form
     {
-        public Proveedores()
+        ConexionBD con;
+        public ProveedoresCincomil()
         {
             InitializeComponent();
         }
-         public Proveedores(DataTable dt)
+        
+        public ProveedoresCincomil(ConexionBD c)
         {
             InitializeComponent();
-            tablaProveedores.DataSource = dt;
+            con = c;
+            dataGridView1.DataSource = con.ProveedoresCincomil();
         }
-
-        private void Proveedores_Load(object sender, EventArgs e)
+    
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void btNuevoProveedor_Click(object sender, EventArgs e)
-        {
-            new NuevoProveedor(new ConexionBD()).Show();
         }
     }
 }

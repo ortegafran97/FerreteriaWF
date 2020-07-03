@@ -12,7 +12,7 @@ namespace FerreteriaWF.Vistas
 {
     public partial class Rubros : Form
     {
-
+        ConexionBD conexion = new ConexionBD();
         public Rubros()
         {
             InitializeComponent();
@@ -46,6 +46,11 @@ namespace FerreteriaWF.Vistas
         private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new EditarRubro(conexion.conection).Show();
         }
     }
 }
